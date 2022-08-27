@@ -1,6 +1,4 @@
-#include <iostream>
-#include <map>
-#include <cstdlib>
+#include "main.h"
 
 using namespace std;
 
@@ -17,13 +15,13 @@ using namespace std;
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-int fib_dyn(int n) {
+unsigned long int fib_dp(int n) {
 
     if (n <= 2) {
         return 1;
     }
 
-    return fib_dyn(n - 1) + fib_dyn(n - 2);
+    return fib_dp(n - 1) + fib_dp(n - 2);
 }
 
 /**
@@ -39,9 +37,9 @@ int fib_dyn(int n) {
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-int fib_dynm(int n) {
+unsigned long int fib_dp_memo(int n) {
 
-    static map<int,int> m = {};
+    static map<int, unsigned long int> m = {};
 
     auto search = m.find(n);
 
@@ -53,7 +51,7 @@ int fib_dynm(int n) {
         return 1;
     }
 
-    int result = fib_dynm(n - 1) + fib_dynm(n - 2);
+    unsigned long int result = fib_dp_memo(n - 1) + fib_dp_memo(n - 2);
 
     m.insert({ n, result });
 
@@ -73,16 +71,25 @@ int fib_dynm(int n) {
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-int fib_dynt(int n) {
+unsigned long int fib_dp_tab(int n) {
 
     int  n_max = n + 1;
-    int* tab   = (int*)calloc(n_max, sizeof(int));
+
+    unsigned long int* tab = (unsigned long int*)calloc(n_max, sizeof(unsigned long int));
+
+    // Init Tab
+
+    for (int i = 0; i < n_max; i++) {
+        tab[i] = 0;
+    }
 
     tab[1] = 1;
 
+    // Determine Result
+
     for (int i = 0, j = 1, k = 2;
          i < n; i++, j = i + 1, k = i + 2) {
-
+;
         if (j < n_max) {
             tab[j] += tab[i];
         }
@@ -108,12 +115,12 @@ int fib_dynt(int n) {
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-int fib_reg(int n) {
+unsigned long int fib_reg(int n) {
     \
-    int prev = 1;
-    int curr = 1;
+    unsigned long int prev = 1;
+    unsigned long int curr = 1;
 
-    int temp;
+    unsigned long int temp;
 
     for (int i = 2; i < n; i++) {
         temp  = curr;
@@ -142,10 +149,10 @@ int fib_reg(int n) {
  */
 int main(int argc, char* argv[]) {
 
-    cout << "FIB (DP - Unoptimized): " << fib_dyn(16) << endl;
-    cout << "FIB (DP - Memoization): " << fib_dynm(124) << endl;
-    cout << "FIB (DP - Tabulation): " << fib_dynt(232) << endl;
-    cout << "FIB (DP - Arbitrary): " << fib_reg(300) << endl;
+    cout << "FIB (DP - Unoptimized): " << fib_dp(16) << endl;
+    cout << "FIB (DP - Memoization): " << fib_dp_memo(424) << endl;
+    cout << "FIB (DP - Tabulation): " << fib_dp_tab(124) << endl;
+    cout << "FIB (DP - Arbitrary): " << fib_reg(234) << endl;
 
     return 0;
 }

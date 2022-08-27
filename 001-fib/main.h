@@ -6,9 +6,9 @@
 #include <map>
 #include <cstdlib>
 
-int fib_dyn(int n);
-int fib_dynm(int n);
-int fib_dynt(int n);
-int fib_reg(int n);
+unsigned long int fib_dp(int n);
+unsigned long int fib_dp_memo(int n);
+unsigned long int fib_dp_tab(int n);
+unsigned long int fib_reg(int n);
 
 #endif // MAIN_H
