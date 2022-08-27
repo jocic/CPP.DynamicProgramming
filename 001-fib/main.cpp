@@ -47,7 +47,7 @@ uint64_t fib_dp(uint64_t n) {
  */
 uint64_t fib_dp_memo(uint64_t n) {
 
-    static map<int, uint64_t> m = {};
+    static map<uint64_t, uint64_t> m = {};
 
     auto search = m.find(n);
 
