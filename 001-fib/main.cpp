@@ -83,7 +83,7 @@ uint64_t fib_dp_tab(uint64_t n) {
 
     uint64_t n_max = n + 1;
 
-    uint64_t* tab = (uint64_t*)calloc((size_t)n_max, sizeof(uint64_t));
+    uint64_t* tab = new uint64_t[n_max];
 
     // Init Tab
 
