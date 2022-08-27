@@ -1,3 +1,20 @@
+/**
+ * Test implementation for the "001-fib" problem.
+ *
+ * Problem: Write a function `fib(n)` that takes in a
+ * number as an argument. The function should return
+ * the n-th number of the Fibonacci sequence.
+ *
+ * @author    Djordje Jocic <office@djordjejocic.com>
+ * @copyright 2022 All Rights Reserved
+ * @version   1.0.0
+ *
+ * @param int argc
+ *   Number of passed arguments.
+ * @return char* argv[]
+ *   Array containing passed arguments.
+ */
+
 #include "main.h"
 
 using namespace std;
@@ -15,7 +32,7 @@ using namespace std;
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long int fib_dp(int n) {
+unsigned long long int fib_dp(int n) {
 
     if (n <= 2) {
         return 1;
@@ -37,21 +54,22 @@ unsigned long int fib_dp(int n) {
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long int fib_dp_memo(int n) {
+unsigned long long int fib_dp_memo(int n) {
 
-    static map<int, unsigned long int> m = {};
+    static map<int, unsigned long long int> m = {};
 
     auto search = m.find(n);
 
     if (search != m.end()) {
-        return search->first;
+        return search->second;
     }
 
     if (n <= 2) {
         return 1;
     }
 
-    unsigned long int result = fib_dp_memo(n - 1) + fib_dp_memo(n - 2);
+    unsigned long long int result =
+        fib_dp_memo(n - 1) + fib_dp_memo(n - 2);
 
     m.insert({ n, result });
 
@@ -71,11 +89,12 @@ unsigned long int fib_dp_memo(int n) {
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long int fib_dp_tab(int n) {
+unsigned long long int fib_dp_tab(int n) {
 
     int  n_max = n + 1;
 
-    unsigned long int* tab = (unsigned long int*)calloc(n_max, sizeof(unsigned long int));
+    unsigned long long int* tab = (unsigned long long int*)
+        calloc(n_max, sizeof(unsigned long long int));
 
     // Init Tab
 
@@ -115,12 +134,12 @@ unsigned long int fib_dp_tab(int n) {
  * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long int fib_reg(int n) {
+unsigned long long int fib_reg(int n) {
     \
-    unsigned long int prev = 1;
-    unsigned long int curr = 1;
+    unsigned long long int prev = 1;
+    unsigned long long int curr = 1;
 
-    unsigned long int temp;
+    unsigned long long int temp;
 
     for (int i = 2; i < n; i++) {
         temp  = curr;
@@ -129,30 +148,4 @@ unsigned long int fib_reg(int n) {
     }
 
     return curr;
-}
-
-/**
- * Test implementation for the "001-fib" problem.
- *
- * Problem: Write a function `fib(n)` that takes in a
- * number as an argument. The function should return
- * the n-th number of the Fibonacci sequence.
- *
- * @author    Djordje Jocic <office@djordjejocic.com>
- * @copyright 2022 All Rights Reserved
- * @version   1.0.0
- *
- * @param int argc
- *   Number of passed arguments.
- * @return char* argv[]
- *   Array containing passed arguments.
- */
-int main(int argc, char* argv[]) {
-
-    cout << "FIB (DP - Unoptimized): " << fib_dp(16) << endl;
-    cout << "FIB (DP - Memoization): " << fib_dp_memo(424) << endl;
-    cout << "FIB (DP - Tabulation): " << fib_dp_tab(124) << endl;
-    cout << "FIB (DP - Arbitrary): " << fib_reg(234) << endl;
-
-    return 0;
 }
