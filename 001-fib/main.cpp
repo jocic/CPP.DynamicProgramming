@@ -1,19 +1,10 @@
-/**
- * Test implementation for the "001-fib" problem.
- *
- * Problem: Write a function `fib(n)` that takes in a
- * number as an argument. The function should return
- * the n-th number of the Fibonacci sequence.
- *
- * @author    Djordje Jocic <office@djordjejocic.com>
- * @copyright 2022 All Rights Reserved
- * @version   1.0.0
- *
- * @param int argc
- *   Number of passed arguments.
- * @return char* argv[]
- *   Array containing passed arguments.
- */
+/******************************************************\
+|* Problem: Write a function `fib(n)` that takes in a *|
+|* number as an argument. The function should return  *|
+|* the n-th number of the Fibonacci sequence.         *|
+|* -------------------------------------------------- *|
+|* Problem Source: freecodecamp.org                   *|
+\******************************************************/
 
 #include "main.h"
 
@@ -26,13 +17,13 @@ using namespace std;
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param int n
+ * @param uint64_t n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return int
+ * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long long int fib_dp(int n) {
+uint64_t fib_dp(uint64_t n) {
 
     if (n <= 2) {
         return 1;
@@ -48,15 +39,15 @@ unsigned long long int fib_dp(int n) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param int n
+ * @param uint64_t n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return int
+ * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long long int fib_dp_memo(int n) {
+uint64_t fib_dp_memo(uint64_t n) {
 
-    static map<int, unsigned long long int> m = {};
+    static map<int, uint64_t> m = {};
 
     auto search = m.find(n);
 
@@ -68,8 +59,7 @@ unsigned long long int fib_dp_memo(int n) {
         return 1;
     }
 
-    unsigned long long int result =
-        fib_dp_memo(n - 1) + fib_dp_memo(n - 2);
+    uint64_t result = fib_dp_memo(n - 1) + fib_dp_memo(n - 2);
 
     m.insert({ n, result });
 
@@ -83,18 +73,17 @@ unsigned long long int fib_dp_memo(int n) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param int n
+ * @param uint64_t n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return int
+ * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long long int fib_dp_tab(int n) {
+uint64_t fib_dp_tab(uint64_t n) {
 
-    int  n_max = n + 1;
+    uint64_t n_max = n + 1;
 
-    unsigned long long int* tab = (unsigned long long int*)
-        calloc(n_max, sizeof(unsigned long long int));
+    uint64_t* tab = (uint64_t*)calloc((size_t)n_max, sizeof(uint64_t));
 
     // Init Tab
 
@@ -128,18 +117,18 @@ unsigned long long int fib_dp_tab(int n) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param int n
+ * @param uint64_t n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return int
+ * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-unsigned long long int fib_reg(int n) {
+uint64_t fib_reg(uint64_t n) {
     \
-    unsigned long long int prev = 1;
-    unsigned long long int curr = 1;
+    uint64_t prev = 1;
+    uint64_t curr = 1;
 
-    unsigned long long int temp;
+    uint64_t temp;
 
     for (int i = 2; i < n; i++) {
         temp  = curr;

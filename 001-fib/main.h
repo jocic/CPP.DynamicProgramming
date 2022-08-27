@@ -1,14 +1,15 @@
-#ifndef MAIN_H
+#ifndef MAIN_001_H
 
-#define MAIN_H
+#define MAIN_001_H
 
 #include <iostream>
 #include <map>
 #include <cstdlib>
+#include <cstdint>
 
-unsigned long long int fib_dp(int n);
-unsigned long long int fib_dp_memo(int n);
-unsigned long long int fib_dp_tab(int n);
-unsigned long long int fib_reg(int n);
+uint64_t fib_dp(uint64_t n);
+uint64_t fib_dp_memo(uint64_t n);
+uint64_t fib_dp_tab(uint64_t n);
+uint64_t fib_reg(uint64_t n);
 
-#endif // MAIN_H
+#endif

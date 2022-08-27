@@ -1,14 +1,15 @@
-#ifndef MAIN_H
+#ifndef MAIN_002_H
 
-#define MAIN_H
+#define MAIN_002_H
 
 #include <iostream>
 #include <map>
 #include <cstdlib>
 #include <sstream>
+#include <cstdint>
 
-unsigned long int gridTraveler_dp(int m, int n);
-unsigned long int gridTraveler_dp_memo(int m, int n);
-unsigned long int gridTraveler_dp_tab(int m, int n);
+uint64_t gridTraveler_dp(uint64_t m, uint64_t n);
+uint64_t gridTraveler_dp_memo(uint64_t m, uint64_t n);
+uint64_t gridTraveler_dp_tab(uint64_t m, uint64_t n);
 
-#endif // MAIN_H
+#endif
