@@ -7,3 +7,5 @@ Collection of problems in the domain of Dynamic Programming that I found and sol
 ## Problems
 
 *   [Fibonacci Sequence](001-fib/main.cpp) - Write a function `fib(n)` that takes in a number as an argument. The function should return the n-th number of the Fibonacci sequence.
+
+*   [Grid Traveler](002-gridTraveler/main.cpp) - Say that you are a traveler on a 2D grid. You begin in the top-left corner and your goal is to travel to the bottom-right corner. You may only move down or right. In how many ways can you travel to the goal on a grid with dimensions m * n?
