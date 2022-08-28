@@ -5,7 +5,7 @@
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/benchmark/catch_benchmark.hpp>
 
-#include "../001-fib/main.h"
+#include "problems/001-fib/main.h"
 
 TEST_CASE("[001-fib] DP implementation - unoptimized...", "001-fib") {
     CHECK(fib_dp(1) == 1);

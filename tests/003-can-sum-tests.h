@@ -5,7 +5,7 @@
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/benchmark/catch_benchmark.hpp>
 
-#include "../003-canSum/main.h"
+#include "problems/003-canSum/main.h"
 
 TEST_CASE("[003-canSum] DP implementation - unoptimized...", "[003-canSum]") {
 
