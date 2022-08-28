@@ -41,7 +41,7 @@ TEST_CASE("[001-fib] Arbitrary implementation...", "001-fib") {
     CHECK(fib_reg(64) == 10610209857723);
 }
 
-#if DP_RUN_BENCHMARKS == 1
+#if RUN_BENCHMARKS == 1
 
 TEST_CASE("[001-fib] Benchmarks...") {
 

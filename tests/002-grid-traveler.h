@@ -39,7 +39,7 @@ TEST_CASE("[002-gridTraveler] DP implementation - tabulation pattern...", "002-g
     CHECK(gridTraveler_dp_tab(18, 18) == 2333606220);
 }
 
-#if DP_RUN_BENCHMARKS == 1
+#if RUN_BENCHMARKS == 1
 
 TEST_CASE("[002-gridTraveler] Benchmarks...") {
 

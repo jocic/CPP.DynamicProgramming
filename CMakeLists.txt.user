@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 8.0.1, 2022-08-28T22:53:48. -->
+<!-- Written by QtCreator 8.0.1, 2022-08-28T23:01:53. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -69,6 +69,38 @@
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
     <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/libs/catch2/src/catch2/catch_template_test_macros.hpp:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/libs/catch2/src/catch2/catch_template_test_macros.hpp">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib-tests.h:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib-tests.h">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib-tests.h:[001-fib] Arbitrary implementation...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib-tests.h:[001-fib] Benchmarks...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib-tests.h:[001-fib] DP implementation - memoization pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib-tests.h:[001-fib] DP implementation - tabulation pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib-tests.h:[001-fib] DP implementation - unoptimized...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib.h:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib.h">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib.h:[001-fib] Arbitrary implementation...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib.h:[001-fib] Benchmarks...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib.h:[001-fib] DP implementation - memoization pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib.h:[001-fib] DP implementation - tabulation pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/001-fib.h:[001-fib] DP implementation - unoptimized...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler-tests.h:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler-tests.h">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler-tests.h:[002-gridTraveler] Benchmarks...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler-tests.h:[002-gridTraveler] DP implementation - memoization pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler-tests.h:[002-gridTraveler] DP implementation - tabulation pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler-tests.h:[002-gridTraveler] DP implementation - unoptimized...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler.h:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler.h">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler.h:[002-gridTraveler] Benchmarks...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler.h:[002-gridTraveler] DP implementation - memoization pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler.h:[002-gridTraveler] DP implementation - tabulation pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/002-grid-traveler.h:[002-gridTraveler] DP implementation - unoptimized...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum-tests.h:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum-tests.h">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum-tests.h:[003-canSum] Benchmarks...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum-tests.h:[003-canSum] DP implementation - memoization pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum-tests.h:[003-canSum] DP implementation - tabulation pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum-tests.h:[003-canSum] DP implementation - unoptimized...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum.h:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum.h">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum.h:[003-canSum] Benchmarks...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum.h:[003-canSum] DP implementation - memoization pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum.h:[003-canSum] DP implementation - tabulation pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/003-can-sum.h:[003-canSum] DP implementation - unoptimized...">Checked</value>
    </valuemap>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>

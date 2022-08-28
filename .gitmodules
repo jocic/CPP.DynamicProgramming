@@ -1,3 +1,3 @@
-[submodule "libs/catch2"]
-	path = libs/catch2
+[submodule "libraries/catch2"]
+	path = libraries/catch2
 	url = https://github.com/catchorg/Catch2

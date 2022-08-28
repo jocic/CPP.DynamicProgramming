@@ -34,7 +34,7 @@ TEST_CASE("[003-canSum] DP implementation - tabulation pattern...", "003-canSum"
     CHECK(canSum_dp_tab(10000, new uint64_t[] { 1, 1, 1, 1, 1 }, 5) == true);
 }
 
-#if DP_RUN_BENCHMARKS == 1
+#if RUN_BENCHMARKS == 1
 
 TEST_CASE("[003-canSum] Benchmarks...") {
 
