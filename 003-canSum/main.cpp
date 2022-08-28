@@ -59,6 +59,8 @@ bool canSum_dp(uint64_t target, uint64_t* nums, size_t nums_len) {
  *   Array of numbers that should be checked.
  * @param uint64_t nums_len
  *   Length of the provided array.
+ * @param bool clear = true
+ *   Flag used to clear Memoization map.
  * @return bool
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.
@@ -123,10 +125,10 @@ bool canSum_dp_tab(uint64_t target, uint64_t* nums, size_t nums_len) {
 
     uint64_t step = UINT64_MAX;
 
-    int i, j, k;
+    uint64_t i, j, k;
 
-    int   tab_len = target + 1;
-    bool* tab     = new bool[tab_len];
+    uint64_t tab_len = target + 1;
+    bool*    tab     = new bool[tab_len];
 
     // Initialize Tab
 
