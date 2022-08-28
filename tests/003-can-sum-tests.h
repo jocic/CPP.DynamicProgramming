@@ -34,4 +34,23 @@ TEST_CASE("[003-canSum] DP implementation - tabulation pattern...", "003-canSum"
     CHECK(canSum_dp_tab(10000, new uint64_t[] { 1, 1, 1, 1, 1 }, 5) == true);
 }
 
+#if DP_RUN_BENCHMARKS == 1
+
+TEST_CASE("[003-canSum] Benchmarks...") {
+
+    BENCHMARK("DP - Unoptimized") {
+        return canSum_dp(100, new uint64_t[] { 7, 14 }, 2);
+    };
+
+//    BENCHMARK("DP - Memoization") {
+//        return canSum_dp_memo(100, new uint64_t[] { 7, 14 }, 2);
+//    };
+
+    BENCHMARK("DP - Tabulation") {
+        return canSum_dp_tab(100, new uint64_t[] { 7, 14 }, 2);
+    };
+};
+
+#endif
+
 #endif

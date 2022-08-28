@@ -3,6 +3,7 @@
 #define TESTS_002_H
 
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/benchmark/catch_benchmark.hpp>
 
 #include "../002-gridTraveler/main.h"
 
@@ -37,5 +38,24 @@ TEST_CASE("[002-gridTraveler] DP implementation - tabulation pattern...", "002-g
     CHECK(gridTraveler_dp_tab(8, 8) == 3432);
     CHECK(gridTraveler_dp_tab(18, 18) == 2333606220);
 }
+
+#if DP_RUN_BENCHMARKS == 1
+
+TEST_CASE("[002-gridTraveler] Benchmarks...") {
+
+    BENCHMARK("DP - Unoptimized") {
+        return gridTraveler_dp(8, 8);
+    };
+
+    BENCHMARK("DP - Memoization") {
+        return gridTraveler_dp_memo(8, 8);
+    };
+
+    BENCHMARK("DP - Tabulation") {
+        return gridTraveler_dp_tab(8, 8);
+    };
+};
+
+#endif
 
 #endif

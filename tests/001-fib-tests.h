@@ -3,6 +3,7 @@
 #define TESTS_001_H
 
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/benchmark/catch_benchmark.hpp>
 
 #include "../001-fib/main.h"
 
@@ -39,5 +40,28 @@ TEST_CASE("[001-fib] Arbitrary implementation...", "001-fib") {
     CHECK(fib_reg(32) == 2178309);
     CHECK(fib_reg(64) == 10610209857723);
 }
+
+#if DP_RUN_BENCHMARKS == 1
+
+TEST_CASE("[001-fib] Benchmarks...") {
+
+    BENCHMARK("DP - Unoptimized") {
+        return fib_dp(16);
+    };
+
+    BENCHMARK("DP - Memoization") {
+        return fib_dp_memo(16);
+    };
+
+    BENCHMARK("DP - Tabulation") {
+        return fib_dp_tab(16);
+    };
+
+    BENCHMARK("DP - General") {
+        return fib_reg(16);
+    };
+};
+
+#endif
 
 #endif
