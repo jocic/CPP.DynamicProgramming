@@ -138,8 +138,6 @@ vector<uint64_t> how_sum_dp_memo(uint64_t target, vector<uint64_t> nums, bool cl
  *   Target sum that is being searched for.
  * @param vector<uint64_t> nums
  *   Array of numbers that should be checked.
- * @param bool clear = true
- *   Flag used for clearing memoization map.
  * @return vector<uint64_t>
  *   Array of numbers  which sum is equal to the provided target. Empty
  *   array will be provided there is no possible solution.

@@ -1,6 +1,6 @@
 # Dynamic Programming - Problems & Solutions in C++
 
-Collection of problems in the domain of Dynamic Programming that I found and solved in the C++ programming language. Uploaded to GitHub for showcasing and archivation purposes.
+Collection of problems in the domain of Dynamic Programming that I found and solved in the C++ programming language. Uploaded to GitHub for showcasing to prospective employers.
 
 [![Buy Me Coffee](images/buy-me-coffee.png)](https://www.paypal.me/DjordjeJocic)
 
