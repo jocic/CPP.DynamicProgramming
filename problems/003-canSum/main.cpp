@@ -60,7 +60,7 @@ bool canSum_dp(uint64_t target, uint64_t* nums, size_t nums_len) {
  * @param uint64_t nums_len
  *   Length of the provided array.
  * @param bool clear = true
- *   Flag used to clear Memoization map.
+ *   Flag used to clear memoization map.
  * @return bool
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.

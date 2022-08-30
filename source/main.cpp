@@ -5,3 +5,4 @@
 #include "tests/001-fib.h"
 #include "tests/002-grid-traveler.h"
 #include "tests/003-can-sum.h"
+#include "tests/004-how-sum.h"

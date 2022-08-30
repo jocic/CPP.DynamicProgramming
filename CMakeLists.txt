@@ -20,9 +20,13 @@ add_executable(dynamic-programming
     problems/003-canSum/main.h
     problems/003-canSum/main.cpp
 
+    problems/004-howSum/main.h
+    problems/004-howSum/main.cpp
+
     tests/001-fib.h
     tests/002-grid-traveler.h
     tests/003-can-sum.h
+    tests/004-how-sum.h
 
     source/main.cpp
 )
