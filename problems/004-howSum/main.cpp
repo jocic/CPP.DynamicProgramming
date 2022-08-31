@@ -130,6 +130,11 @@ vector<uint64_t> how_sum_dp_memo(uint64_t target, vector<uint64_t> nums, bool cl
 /**
  * DP implementation optimized with the Tabulation pattern.
  *
+ * Note: If benchmarks are correct, than tabulation variant
+ * is two-three times slower then the unoptimized one. It's
+ * most probably due to vector impelmenetation. Check in a few
+ * days...
+ *
  * @author    Djordje Jocic <office@djordjejocic.com>
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
@@ -148,54 +153,35 @@ vector<uint64_t> how_sum_dp_tab(uint64_t target, vector<uint64_t> nums) {
 
     vector<uint64_t>* tab = new vector<uint64_t>[tab_len];
 
-    int i, j, k;
-    int base, number, multiple, probe;
+    int i, j, k, l;
 
-    uint64_t min = UINT64_MAX;
-
-    // Initialize Tab
+    // Seed Tab
 
     for (i = 0; i < nums.size(); i++) {
 
-        base = nums[i];
+        k = nums[i];
 
-        if (base < min) {
-            min = base;
-        }
-
-        for (number = base, multiple = 1; number <= target; multiple++, number = base * multiple) {
-
-            if (tab[number].size() > 0) {
-                continue;
-            }
-
-            for (j = 0; j < multiple; j++) {
-                tab[number].push_back(base);
-            }
-        }
+        tab[k].push_back(k);
     }
 
-    // Populate Gaps
+    // Process Tab
 
     for (i = 0; i < tab_len; i++) {
 
-        if (tab[i].size() == 0) {
+        if (tab[i].size() > 0) {
 
             for (j = 0; j < nums.size(); j++) {
 
-                probe = i - nums[j];
+                k = nums[j];
+                l = i + k;
 
-                if (probe < 0) {
-                    continue;
+                if (l < tab_len) {
+                    tab[l] = tab[i];
+                    tab[l].push_back(k);
                 }
 
-                if (tab[probe].size() > 0 && (nums[j] + probe) == target) {
-
-                    tab[i].push_back(nums[j]);
-
-                    for (k = 0; k < tab[probe].size(); k++) {
-                        tab[i].push_back(tab[probe][k]);
-                    }
+                if (l == target) {
+                    break;
                 }
             }
         }
