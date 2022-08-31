@@ -24,29 +24,23 @@
  *   Target sum that is being searched for.
  * @param vector<uint64_t> nums
  *   Array of numbers that should be checked.
- * @param bool clear = true
- *   Flag used for clearing summation vector.
+ * @param vector<uint64_t> sum
+ *   Variable used by the DP algorithm - should be left as is.
  * @return vector<uint64_t>
  *   Array of numbers  which sum is equal to the provided target. Empty
  *   array will be provided there is no possible solution.
  */
-vector<uint64_t> how_sum_dp(uint64_t target, vector<uint64_t> nums, bool clear) {
+vector<uint64_t> how_sum_dp(uint64_t target, vector<uint64_t> nums, vector<uint64_t> sum) {
 
     vector<uint64_t> results;
-
-    static vector<uint64_t> sum;
 
     if (target == 0) {
         return sum;
     }
 
-    if (clear) {
-        sum.clear();
-    }
-
     int sum_size = sum.size();
 
-    for (uint64_t i = 0; i < nums.size(); i++) {
+    for (size_t i = 0; i < nums.size(); i++) {
 
         if (target >= nums[i]) {
 
@@ -56,7 +50,7 @@ vector<uint64_t> how_sum_dp(uint64_t target, vector<uint64_t> nums, bool clear) 
 
             sum.push_back(nums[i]);
 
-            if ((results = how_sum_dp(target - nums[i], nums, false)).size() > 0) {
+            if ((results = how_sum_dp(target - nums[i], nums, sum)).size() > 0) {
                 return results;
             }
         }
@@ -108,7 +102,7 @@ vector<uint64_t> how_sum_dp_memo(uint64_t target, vector<uint64_t> nums, bool cl
 
     int sum_size = sum.size();
 
-    for (uint64_t i = 0; i < nums.size(); i++) {
+    for (size_t i = 0; i < nums.size(); i++) {
 
         if (target >= nums[i]) {
 
@@ -148,15 +142,17 @@ vector<uint64_t> how_sum_dp_tab(uint64_t target, vector<uint64_t> nums) {
 
     vector<uint64_t>* tab = new vector<uint64_t>[tab_len];
 
-    int i, j, k, l;
+    size_t i, j;
+
+    uint64_t curr_num, next_num;
 
     // Seed Tab
 
     for (i = 0; i < nums.size(); i++) {
 
-        k = nums[i];
+        curr_num = nums[i];
 
-        tab[k].push_back(k);
+        tab[curr_num].push_back(curr_num);
     }
 
     // Process Tab
@@ -167,15 +163,15 @@ vector<uint64_t> how_sum_dp_tab(uint64_t target, vector<uint64_t> nums) {
 
             for (j = 0; j < nums.size(); j++) {
 
-                k = nums[j];
-                l = i + k;
+                curr_num = nums[j];
+                next_num = i + curr_num;
 
-                if (l < tab_len && tab[l].empty()) {
-                    tab[l] = tab[i];
-                    tab[l].push_back(k);
+                if (next_num < tab_len && tab[next_num].empty()) {
+                    tab[next_num] = tab[i];
+                    tab[next_num].push_back(curr_num);
                 }
 
-                if (l == target) {
+                if (next_num == target) {
                     break;
                 }
             }

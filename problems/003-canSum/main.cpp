@@ -34,7 +34,7 @@ bool canSum_dp(uint64_t target, vector<uint64_t> nums) {
         return true;
     }
 
-    for (int i = 0; i < nums.size(); i++) {
+    for (size_t i = 0; i < nums.size(); i++) {
 
         if (target >= nums[i] && canSum_dp(target - nums[i], nums)) {
             return true;
@@ -82,7 +82,7 @@ bool canSum_dp_memo(uint64_t target, vector<uint64_t> nums, bool clear) {
         return true;
     }
 
-    for (int i = 0; i < nums.size(); i++) {
+    for (size_t i = 0; i < nums.size(); i++) {
 
         if (target >= nums[i]) {
 
@@ -119,10 +119,12 @@ bool canSum_dp_tab(uint64_t target, vector<uint64_t> nums) {
 
     uint64_t step = UINT64_MAX;
 
-    uint64_t i, j, k;
+    size_t i, j;
 
-    uint64_t tab_len = target + 1;
-    bool*    tab     = new bool[tab_len];
+    uint64_t next_num;
+
+    size_t tab_len = target + 1;
+    bool*  tab     = new bool[tab_len];
 
     // Initialize Tab
 
@@ -134,8 +136,8 @@ bool canSum_dp_tab(uint64_t target, vector<uint64_t> nums) {
 
         for (j = 0; tab[i] && j < nums.size(); j++) {
 
-            if ((k = i + nums[j]) < tab_len) {
-                tab[k] = true;
+            if ((next_num = i + nums[j]) < tab_len) {
+                tab[next_num] = true;
             }
         }
     }
