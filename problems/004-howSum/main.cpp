@@ -130,11 +130,6 @@ vector<uint64_t> how_sum_dp_memo(uint64_t target, vector<uint64_t> nums, bool cl
 /**
  * DP implementation optimized with the Tabulation pattern.
  *
- * Note: If benchmarks are correct, than tabulation variant
- * is two-three times slower then the unoptimized one. It's
- * most probably due to vector impelmenetation. Check in a few
- * days...
- *
  * @author    Djordje Jocic <office@djordjejocic.com>
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
@@ -175,7 +170,7 @@ vector<uint64_t> how_sum_dp_tab(uint64_t target, vector<uint64_t> nums) {
                 k = nums[j];
                 l = i + k;
 
-                if (l < tab_len) {
+                if (l < tab_len && tab[l].empty()) {
                     tab[l] = tab[i];
                     tab[l].push_back(k);
                 }
