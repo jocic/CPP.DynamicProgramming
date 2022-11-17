@@ -23,8 +23,8 @@ add_executable(dynamic-programming
     problems/how-sum/main.h
     problems/how-sum/main.cpp
 
-#    problems/005-bestSum/main.h
-#    problems/005-bestSum/main.cpp
+    problems/best-sum/main.h
+    problems/best-sum/main.cpp
 
 #    problems/maximal-square/problem.h
 #    problems/maximal-square/problem.cpp
@@ -38,7 +38,7 @@ add_executable(dynamic-programming
     tests/grid-traveler.h
     tests/can-sum.h
     tests/how-sum.h
-#    tests/005-best-sum.h
+    tests/best-sum.h
 
     source/main.cpp
 )

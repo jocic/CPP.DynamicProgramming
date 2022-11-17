@@ -6,3 +6,4 @@
 #include "tests/grid-traveler.h"
 #include "tests/can-sum.h"
 #include "tests/how-sum.h"
+#include "tests/best-sum.h"

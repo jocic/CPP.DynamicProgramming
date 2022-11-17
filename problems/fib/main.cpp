@@ -59,7 +59,7 @@ int fib_dp_memo(int n) {
         return 1;
     }
 
-    uint64_t result = fib_dp_memo(n - 1) + fib_dp_memo(n - 2);
+    int result = fib_dp_memo(n - 1) + fib_dp_memo(n - 2);
 
     m.insert({ n, result });
 

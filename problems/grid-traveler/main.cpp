@@ -57,7 +57,7 @@ int grid_traveler_dp(int m, int n) {
  */
 int grid_traveler_dp_memo(int m, int n) {
 
-    static map<string, uint64_t> memo;
+    static map<string, int> memo;
 
     stringstream key_stream;
 
