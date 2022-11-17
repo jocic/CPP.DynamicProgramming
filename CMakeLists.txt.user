@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 8.0.1, 2022-11-17T15:43:24. -->
+<!-- Written by QtCreator 8.0.1, 2022-11-17T15:58:08. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -75,6 +75,11 @@
     <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/fib.h:[001-fib] DP implementation - memoization pattern...">Checked</value>
     <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/fib.h:[001-fib] DP implementation - tabulation pattern...">Checked</value>
     <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/fib.h:[001-fib] DP implementation - unoptimized...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/grid-traveler.h:C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/grid-traveler.h">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/grid-traveler.h:[002-gridTraveler] Benchmarks...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/grid-traveler.h:[002-gridTraveler] DP implementation - memoization pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/grid-traveler.h:[002-gridTraveler] DP implementation - tabulation pattern...">Checked</value>
+    <value type="Qt::CheckState" key="1@C:/Users/jocic/Desktop/Projects/CPP/CPP.DynamicProgramming/tests/grid-traveler.h:[002-gridTraveler] DP implementation - unoptimized...">Checked</value>
    </valuemap>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>

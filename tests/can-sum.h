@@ -1,13 +1,13 @@
-#ifndef TESTS_003_H
+#ifndef TESTS_CAN_SUM_H
 
-#define TESTS_003_H
+#define TESTS_CAN_SUM_H
 
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/benchmark/catch_benchmark.hpp>
 
-#include "problems/003-canSum/main.h"
+#include "problems/can-sum/main.h"
 
-TEST_CASE("[003-canSum] DP implementation - unoptimized...", "[003-canSum]") {
+TEST_CASE("[003-canSum] DP implementation - unoptimized...") {
     CHECK(canSum_dp(7, { 2, 3 }) == true);
     CHECK(canSum_dp(7, { 5, 3, 4, 7 }) == true);
     CHECK(canSum_dp(7, { 2, 4 }) == false);
@@ -15,7 +15,7 @@ TEST_CASE("[003-canSum] DP implementation - unoptimized...", "[003-canSum]") {
     CHECK(canSum_dp(100, { 7, 14 }) == false);
 }
 
-TEST_CASE("[003-canSum] DP implementation - memoization pattern...", "003-canSum") {
+TEST_CASE("[003-canSum] DP implementation - memoization pattern...") {
     CHECK(canSum_dp_memo(7, { 2, 3 }) == true);
     CHECK(canSum_dp_memo(7, { 5, 3, 4, 7 }) == true);
     CHECK(canSum_dp_memo(7, { 2, 4 }) == false);
@@ -24,7 +24,7 @@ TEST_CASE("[003-canSum] DP implementation - memoization pattern...", "003-canSum
     CHECK(canSum_dp_memo(10000, {1, 1, 1, 1, 1 }) == true);
 }
 
-TEST_CASE("[003-canSum] DP implementation - tabulation pattern...", "003-canSum") {
+TEST_CASE("[003-canSum] DP implementation - tabulation pattern...") {
     CHECK(canSum_dp_tab(7, { 2, 3 }) == true);
     CHECK(canSum_dp_tab(7, { 5, 3, 4, 7 }) == true);
     CHECK(canSum_dp_tab(7, { 2, 4 }) == false);
@@ -37,15 +37,15 @@ TEST_CASE("[003-canSum] DP implementation - tabulation pattern...", "003-canSum"
 
 TEST_CASE("[003-canSum] Benchmarks...") {
 
-    BENCHMARK("DP - Unoptimized") {
+    BENCHMARK("Unoptimized") {
         return canSum_dp(100, { 7, 14 });
     };
 
-    BENCHMARK("DP - Memoization") {
+    BENCHMARK("Memoization") {
         return canSum_dp_memo(100, { 7, 14 });
     };
 
-    BENCHMARK("DP - Tabulation") {
+    BENCHMARK("Tabulation") {
         return canSum_dp_tab(100, { 7, 14 });
     };
 };

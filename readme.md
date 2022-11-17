@@ -12,3 +12,5 @@ Other references: [Leetcode](https://leetcode.com/jocic_91), [CodeSignal](https:
 
 *   [Grid Traveler](problems/grid-traveler/main.cpp) - Say that you are a traveler on a 2D grid. You begin in the top-left corner and your goal is to travel to the bottom-right corner. You may only move down or right. In how many ways can you travel to the goal on a grid with dimensions m * n?
 
+*   [Can Sum](problems/can-sum/main.cpp) - Write a function `canSum(targetSum, numbers)` that takes in a `targetSum` and an array of numbers as arguments. The function should return a boolean indicating whether or not it is possible to generate the `targetSum` using numbers from the array. You may use an element of the array as many times as needed, and you may assume that all input numbers are non-negative.
+

@@ -4,3 +4,4 @@
 
 #include "tests/fib.h"
 #include "tests/grid-traveler.h"
+#include "tests/can-sum.h"

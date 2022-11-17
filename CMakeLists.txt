@@ -17,8 +17,8 @@ add_executable(dynamic-programming
     problems/grid-traveler/main.h
     problems/grid-traveler/main.cpp
 
-#    problems/003-canSum/main.h
-#    problems/003-canSum/main.cpp
+    problems/can-sum/main.h
+    problems/can-sum/main.cpp
 
 #    problems/004-howSum/main.h
 #    problems/004-howSum/main.cpp
@@ -36,7 +36,7 @@ add_executable(dynamic-programming
 
     tests/fib.h
     tests/grid-traveler.h
-#    tests/003-can-sum.h
+    tests/can-sum.h
 #    tests/004-how-sum.h
 #    tests/005-best-sum.h
 

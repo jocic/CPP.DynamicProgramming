@@ -20,15 +20,15 @@
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t target
+ * @param int target
  *   Target sum that is being searched for.
- * @param vector<uint64_t> nums
+ * @param vector<int> nums
  *   Array of numbers that should be checked.
  * @return bool
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.
  */
-bool canSum_dp(uint64_t target, vector<uint64_t> nums) {
+bool canSum_dp(int target, vector<int> nums) {
 
     if (target == 0) {
         return true;
@@ -51,9 +51,9 @@ bool canSum_dp(uint64_t target, vector<uint64_t> nums) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t target
+ * @param int target
  *   Target sum that is being searched for.
- * @param vector<uint64_t> nums
+ * @param vector<int> nums
  *   Array of numbers that should be checked.
  * @param bool clear = true
  *   Flag used to clear memoization map.
@@ -61,12 +61,12 @@ bool canSum_dp(uint64_t target, vector<uint64_t> nums) {
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.
  */
-bool canSum_dp_memo(uint64_t target, vector<uint64_t> nums, bool clear) {
+bool canSum_dp_memo(int target, vector<int> nums, bool clear) {
 
-    static map<uint64_t, bool> memo;
+    static map<int, bool> memo;
 
-    uint64_t new_target;
-    bool     result;
+    int  new_target;
+    bool result;
 
     if (clear) {
         memo.clear();
@@ -107,21 +107,19 @@ bool canSum_dp_memo(uint64_t target, vector<uint64_t> nums, bool clear) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t target
+ * @param int target
  *   Target sum that is being searched for.
- * @param vector<uint64_t> nums
+ * @param vector<int> nums
  *   Array of numbers that should be checked.
  * @return bool
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.
  */
-bool canSum_dp_tab(uint64_t target, vector<uint64_t> nums) {
-
-    uint64_t step = UINT64_MAX;
+bool canSum_dp_tab(int target, vector<int> nums) {
 
     size_t i, j;
 
-    uint64_t next_num;
+    int next_num;
 
     size_t tab_len = target + 1;
     bool*  tab     = new bool[tab_len];
