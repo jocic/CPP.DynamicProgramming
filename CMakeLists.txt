@@ -20,8 +20,8 @@ add_executable(dynamic-programming
     problems/can-sum/main.h
     problems/can-sum/main.cpp
 
-#    problems/004-howSum/main.h
-#    problems/004-howSum/main.cpp
+    problems/how-sum/main.h
+    problems/how-sum/main.cpp
 
 #    problems/005-bestSum/main.h
 #    problems/005-bestSum/main.cpp
@@ -37,7 +37,7 @@ add_executable(dynamic-programming
     tests/fib.h
     tests/grid-traveler.h
     tests/can-sum.h
-#    tests/004-how-sum.h
+    tests/how-sum.h
 #    tests/005-best-sum.h
 
     source/main.cpp

@@ -14,3 +14,4 @@ Other references: [Leetcode](https://leetcode.com/jocic_91), [CodeSignal](https:
 
 *   [Can Sum](problems/can-sum/main.cpp) - Write a function `canSum(targetSum, numbers)` that takes in a `targetSum` and an array of numbers as arguments. The function should return a boolean indicating whether or not it is possible to generate the `targetSum` using numbers from the array. You may use an element of the array as many times as needed, and you may assume that all input numbers are non-negative.
 
+*   [How Sum](problems/how-sum/main.cpp) - Write a function `howSum(targetSum, numbers)` that takes in a `targetSum` and an array of numbers as arguments. The function should return an array containing any combination of elements that add up to exactly the targetSum. If there is no combination that adds up to the targetSum, then return an empty array. If there are multiple combinations possible, you may return any single one.

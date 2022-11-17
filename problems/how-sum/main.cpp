@@ -20,43 +20,55 @@
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t target
+ * @param int target
  *   Target sum that is being searched for.
- * @param vector<uint64_t> nums
+ * @param vector<int> nums
  *   Array of numbers that should be checked.
- * @param vector<uint64_t> sum
- *   Variable used by the DP algorithm - should be left as is.
- * @return vector<uint64_t>
+ * @param howsum_dp_t actions
+ *   Optional parameter used in DP logic for controlling recursive flow.
+ * @return vector<int>
  *   Array of numbers  which sum is equal to the provided target. Empty
  *   array will be provided there is no possible solution.
  */
-vector<uint64_t> how_sum_dp(uint64_t target, vector<uint64_t> nums, vector<uint64_t> sum) {
+vector<int> how_sum_dp(int target, vector<int> nums, howsum_dp_t actions) {
 
-    vector<uint64_t> results;
+    static int root_case;
 
-    if (target == 0) {
-        return sum;
+    vector<int> res;
+
+    if (actions.reset) {
+        root_case = target;
     }
 
-    int sum_size = sum.size();
+    if (target == INT_MAX) {
+        throw std::invalid_argument("[x] No no no, you flew too high...");
+    }
+
+    if (target == 0) {
+        return actions.kill ? vector<int>{ INT_MAX } : vector<int>{};
+    }
 
     for (size_t i = 0; i < nums.size(); i++) {
 
         if (target >= nums[i]) {
+            res = how_sum_dp(target - nums[i], nums, { false, false });
+        } else {
+            res = how_sum_dp(0, nums, { false, true });
+        }
 
-            if (sum.size() > sum_size) {
-                sum.pop_back();
-            }
+        if (res.size() == 0 || res[0] != INT_MAX) {
 
-            sum.push_back(nums[i]);
+            res.push_back(nums[i]);
 
-            if ((results = how_sum_dp(target - nums[i], nums, sum)).size() > 0) {
-                return results;
-            }
+            return res;
         }
     }
 
-    return {};
+    if (target == root_case && res.size() > 0 && res[0] == INT_MAX) {
+        res.clear();
+    }
+
+    return res;
 }
 
 /**
@@ -66,59 +78,68 @@ vector<uint64_t> how_sum_dp(uint64_t target, vector<uint64_t> nums, vector<uint6
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t target
+ * @param int target
  *   Target sum that is being searched for.
- * @param vector<uint64_t> nums
+ * @param vector<int> nums
  *   Array of numbers that should be checked.
- * @param bool clear = true
- *   Flag used for clearing memoization map.
- * @return vector<uint64_t>
+ * @param howsum_dp_t actions
+ *   Optional parameter used in DP logic for controlling recursive flow.
+ * @return vector<int>
  *   Array of numbers  which sum is equal to the provided target. Empty
  *   array will be provided there is no possible solution.
  */
-vector<uint64_t> how_sum_dp_memo(uint64_t target, vector<uint64_t> nums, bool clear) {
+vector<int> how_sum_dp_memo(int target, vector<int> nums, howsum_dp_t actions) {
 
-    static map<uint64_t, vector<uint64_t>> memo;
-    static vector<uint64_t> sum;
+    static map<int, vector<int>> memo;
 
-    vector<uint64_t> results;
+    static int root_case;
 
-    if (clear) {
+    vector<int> res;
+
+    if (actions.reset) {
+
+        root_case = target;
+
         memo.clear();
-        sum.clear();
+    }
+
+    if (target == INT_MAX) {
+        throw std::invalid_argument("[x] No no no, you flew too high...");
     }
 
     auto search = memo.find(target);
 
     if (search != memo.end()) {
         return search->second;
-
     }
 
     if (target == 0) {
-        memo.insert({ target, sum });
-        return sum;
+        return actions.kill ? vector<int>{ INT_MAX } : vector<int>{};
     }
-
-    int sum_size = sum.size();
 
     for (size_t i = 0; i < nums.size(); i++) {
 
         if (target >= nums[i]) {
+            res = how_sum_dp_memo(target - nums[i], nums, { false, false });
+        } else {
+            res = how_sum_dp_memo(0, nums, { false, true });
+        }
 
-            if (sum.size() > sum_size) {
-                sum.pop_back();
-            }
+        if (res.size() == 0 || res[0] != INT_MAX) {
 
-            sum.push_back(nums[i]);
+            res.push_back(nums[i]);
 
-            if ((results = how_sum_dp_memo(target - nums[i], nums, false)).size() > 0) {
-                return results;
-            }
+            return res;
         }
     }
 
-    return {};
+    if (target == root_case && res.size() > 0 && res[0] == INT_MAX) {
+        res.clear();
+    }
+
+    memo.insert_or_assign(target, res);
+
+    return res;
 }
 
 /**
@@ -128,25 +149,27 @@ vector<uint64_t> how_sum_dp_memo(uint64_t target, vector<uint64_t> nums, bool cl
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t target
+ * @param int target
  *   Target sum that is being searched for.
- * @param vector<uint64_t> nums
+ * @param vector<int> nums
  *   Array of numbers that should be checked.
- * @return vector<uint64_t>
+ * @return vector<int>
  *   Array of numbers  which sum is equal to the provided target. Empty
  *   array will be provided there is no possible solution.
  */
-vector<uint64_t> how_sum_dp_tab(uint64_t target, vector<uint64_t> nums) {
+vector<int> how_sum_dp_tab(int target, vector<int> nums) {
 
     size_t tab_len = target + 1;
 
-    vector<uint64_t>* tab = new vector<uint64_t>[tab_len];
+    vector<int>* tab = new vector<int>[tab_len + 1];
 
-    size_t i, j;
+    int i, j;
 
-    uint64_t curr_num, next_num;
+    int curr_num, next_num;
 
     // Seed Tab
+
+    tab[0].push_back(0);
 
     for (i = 0; i < nums.size(); i++) {
 
@@ -157,7 +180,7 @@ vector<uint64_t> how_sum_dp_tab(uint64_t target, vector<uint64_t> nums) {
 
     // Process Tab
 
-    for (i = 0; i < tab_len; i++) {
+    for (i = 1; i < tab_len; i++) {
 
         if (tab[i].size() > 0) {
 
