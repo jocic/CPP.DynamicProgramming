@@ -17,10 +17,10 @@ using namespace std;
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t n
+ * @param int n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return uint64_t
+ * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
 int fib_dp(int n) {
@@ -39,10 +39,10 @@ int fib_dp(int n) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t n
+ * @param int n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return uint64_t
+ * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
 int fib_dp_memo(int n) {
@@ -73,10 +73,10 @@ int fib_dp_memo(int n) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t n
+ * @param int n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return uint64_t
+ * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
 int fib_dp_tab(int n) {
@@ -117,10 +117,10 @@ int fib_dp_tab(int n) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t n
+ * @param int n
  *   N-th number of element in the Fibonacci sequence
  *   that the function should return.
- * @return uint64_t
+ * @return int
  *   Value of the N-th element in the Fibonacci sequence.
  */
 int fib_reg(int n) {

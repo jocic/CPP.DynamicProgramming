@@ -19,17 +19,17 @@ using namespace std;
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t m
+ * @param int m
  *   Numer of rows the imaginary grid contains.
- * @param uint64_t n
+ * @param int n
  *   Numer of columns the imaginary grid contains.
- * @return uint64_t
+ * @return int
  *   Number of possible paths within the grid given
  *   the movement constraints.
  */
-uint64_t gridTraveler_dp(uint64_t m, uint64_t n) {
+int gridTraveler_dp(int m, int n) {
 
-    if (m <= 0 || n <= 0) {
+    if (m == 0 || n == 0) {
         return 0;
     }
 
@@ -47,21 +47,21 @@ uint64_t gridTraveler_dp(uint64_t m, uint64_t n) {
  * @copyright 2022 All Rights Reserved
  * @version   1.0.0
  *
- * @param uint64_t m
+ * @param int m
  *   Numer of rows the imaginary grid contains.
- * @param uint64_t n
+ * @param int n
  *   Numer of columns the imaginary grid contains.
- * @return uint64_t
+ * @return int
  *   Number of possible paths within the grid given
  *   the movement constraints.
  */
-uint64_t gridTraveler_dp_memo(uint64_t m, uint64_t n) {
+int gridTraveler_dp_memo(int m, int n) {
 
     static map<string, uint64_t> memo;
 
     stringstream key_stream;
 
-    uint64_t result;
+    int result;
 
     key_stream << m << "," << n;
 
@@ -71,7 +71,7 @@ uint64_t gridTraveler_dp_memo(uint64_t m, uint64_t n) {
         return search->second;
     }
 
-    if (m <= 0 || n <= 0) {
+    if (m == 0 || n == 0) {
         return 0;
     }
 
@@ -101,20 +101,20 @@ uint64_t gridTraveler_dp_memo(uint64_t m, uint64_t n) {
  *   Number of possible paths within the grid given
  *   the movement constraints.
  */
-uint64_t gridTraveler_dp_tab(uint64_t m, uint64_t n) {
+int gridTraveler_dp_tab(int m, int n) {
 
     int i, j, k, l;
 
-    uint64_t m_max = m + 1;
-    uint64_t n_max = n + 1;
+    int m_max = m + 1;
+    int n_max = n + 1;
 
-    uint64_t** tab = new uint64_t*[m_max];
+    int** tab = new int*[m_max];
 
     // Init Tab
 
     for (i = 0; i < m_max; i++) {
 
-        tab[i] = new uint64_t[n_max];
+        tab[i] = new int[n_max];
 
         for (j = 0; j < n_max; j++) {
             tab[i][j] = 0;

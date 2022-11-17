@@ -14,8 +14,8 @@ add_executable(dynamic-programming
     problems/fib/main.h
     problems/fib/main.cpp
 
-#    problems/002-gridTraveler/main.h
-#    problems/002-gridTraveler/main.cpp
+    problems/grid-traveler/main.h
+    problems/grid-traveler/main.cpp
 
 #    problems/003-canSum/main.h
 #    problems/003-canSum/main.cpp
@@ -35,7 +35,7 @@ add_executable(dynamic-programming
 #    tests/jumping-stones.h
 
     tests/fib.h
-#    tests/002-grid-traveler.h
+    tests/grid-traveler.h
 #    tests/003-can-sum.h
 #    tests/004-how-sum.h
 #    tests/005-best-sum.h

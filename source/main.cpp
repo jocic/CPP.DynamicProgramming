@@ -3,3 +3,4 @@
 #define RUN_BENCHMARKS 0
 
 #include "tests/fib.h"
+#include "tests/grid-traveler.h"
