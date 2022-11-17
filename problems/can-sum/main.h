@@ -9,8 +9,8 @@
 
 using namespace std;
 
-bool canSum_dp(int target, vector<int> nums);
-bool canSum_dp_memo(int target, vector<int> nums, bool clear = true);
-bool canSum_dp_tab(int target, vector<int> nums);
+bool can_sum_dp(int target, vector<int> nums);
+bool can_sum_dp_memo(int target, vector<int> nums, bool clear = true);
+bool can_sum_dp_tab(int target, vector<int> nums);
 
 #endif

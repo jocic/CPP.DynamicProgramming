@@ -27,7 +27,7 @@ using namespace std;
  *   Number of possible paths within the grid given
  *   the movement constraints.
  */
-int gridTraveler_dp(int m, int n) {
+int grid_traveler_dp(int m, int n) {
 
     if (m == 0 || n == 0) {
         return 0;
@@ -37,7 +37,7 @@ int gridTraveler_dp(int m, int n) {
         return 1;
     }
 
-    return gridTraveler_dp(m - 1, n) + gridTraveler_dp(m, n - 1);
+    return grid_traveler_dp(m - 1, n) + grid_traveler_dp(m, n - 1);
 }
 
 /**
@@ -55,7 +55,7 @@ int gridTraveler_dp(int m, int n) {
  *   Number of possible paths within the grid given
  *   the movement constraints.
  */
-int gridTraveler_dp_memo(int m, int n) {
+int grid_traveler_dp_memo(int m, int n) {
 
     static map<string, uint64_t> memo;
 
@@ -79,7 +79,7 @@ int gridTraveler_dp_memo(int m, int n) {
         return 1;
     }
 
-    result = gridTraveler_dp_memo(m - 1, n) + gridTraveler_dp_memo(m, n - 1);
+    result = grid_traveler_dp_memo(m - 1, n) + grid_traveler_dp_memo(m, n - 1);
 
     memo.insert({ key_stream.str(), result });
 
@@ -101,7 +101,7 @@ int gridTraveler_dp_memo(int m, int n) {
  *   Number of possible paths within the grid given
  *   the movement constraints.
  */
-int gridTraveler_dp_tab(int m, int n) {
+int grid_traveler_dp_tab(int m, int n) {
 
     int i, j, k, l;
 

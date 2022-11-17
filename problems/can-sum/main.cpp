@@ -28,7 +28,7 @@
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.
  */
-bool canSum_dp(int target, vector<int> nums) {
+bool can_sum_dp(int target, vector<int> nums) {
 
     if (target == 0) {
         return true;
@@ -36,7 +36,7 @@ bool canSum_dp(int target, vector<int> nums) {
 
     for (size_t i = 0; i < nums.size(); i++) {
 
-        if (target >= nums[i] && canSum_dp(target - nums[i], nums)) {
+        if (target >= nums[i] && can_sum_dp(target - nums[i], nums)) {
             return true;
         }
     }
@@ -61,7 +61,7 @@ bool canSum_dp(int target, vector<int> nums) {
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.
  */
-bool canSum_dp_memo(int target, vector<int> nums, bool clear) {
+bool can_sum_dp_memo(int target, vector<int> nums, bool clear) {
 
     static map<int, bool> memo;
 
@@ -87,7 +87,7 @@ bool canSum_dp_memo(int target, vector<int> nums, bool clear) {
         if (target >= nums[i]) {
 
             new_target = target - nums[i];
-            result     = canSum_dp_memo(new_target, nums, false);
+            result     = can_sum_dp_memo(new_target, nums, false);
 
             memo.insert({ new_target, result });
 
@@ -115,7 +115,7 @@ bool canSum_dp_memo(int target, vector<int> nums, bool clear) {
  *   Value `TRUE` if target sum can be formed with the
  *   provided array of numbers, and vice versa.
  */
-bool canSum_dp_tab(int target, vector<int> nums) {
+bool can_sum_dp_tab(int target, vector<int> nums) {
 
     size_t i, j;
 

@@ -7,14 +7,14 @@
 
 #include "problems/fib/main.h"
 
-TEST_CASE("[001-fib] DP implementation - unoptimized...") {
+TEST_CASE("[fib] DP implementation - unoptimized...") {
     CHECK(fib_dp(1) == 1);
     CHECK(fib_dp(4) == 3);
     CHECK(fib_dp(8) == 21);
     CHECK(fib_dp(16) == 987);
 }
 
-TEST_CASE("[001-fib] DP implementation - memoization pattern...") {
+TEST_CASE("[fib] DP implementation - memoization pattern...") {
     CHECK(fib_dp_memo(1) == 1);
     CHECK(fib_dp_memo(4) == 3);
     CHECK(fib_dp_memo(8) == 21);
@@ -22,7 +22,7 @@ TEST_CASE("[001-fib] DP implementation - memoization pattern...") {
     CHECK(fib_dp_memo(32) == 2178309);
 }
 
-TEST_CASE("[001-fib] DP implementation - tabulation pattern...") {
+TEST_CASE("[fib] DP implementation - tabulation pattern...") {
     CHECK(fib_dp_tab(1) == 1);
     CHECK(fib_dp_tab(4) == 3);
     CHECK(fib_dp_tab(8) == 21);
@@ -30,7 +30,7 @@ TEST_CASE("[001-fib] DP implementation - tabulation pattern...") {
     CHECK(fib_dp_tab(32) == 2178309);
 }
 
-TEST_CASE("[001-fib] Arbitrary implementation...") {
+TEST_CASE("[fib] Arbitrary implementation...") {
     CHECK(fib_reg(1) == 1);
     CHECK(fib_reg(4) == 3);
     CHECK(fib_reg(8) == 21);
@@ -40,7 +40,7 @@ TEST_CASE("[001-fib] Arbitrary implementation...") {
 
 #if RUN_BENCHMARKS == 1
 
-TEST_CASE("[001-fib] Benchmarks...") {
+TEST_CASE("[fib] Benchmarks...") {
 
     BENCHMARK("Unoptimized") {
         return fib_dp(16);
