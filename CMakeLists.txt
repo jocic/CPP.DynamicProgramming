@@ -11,26 +11,34 @@ add_subdirectory(libraries/catch2)
 
 add_executable(dynamic-programming
 
-    problems/001-fib/main.h
-    problems/001-fib/main.cpp
+    problems/fib/main.h
+    problems/fib/main.cpp
 
-    problems/002-gridTraveler/main.h
-    problems/002-gridTraveler/main.cpp
+#    problems/002-gridTraveler/main.h
+#    problems/002-gridTraveler/main.cpp
 
-    problems/003-canSum/main.h
-    problems/003-canSum/main.cpp
+#    problems/003-canSum/main.h
+#    problems/003-canSum/main.cpp
 
-    problems/004-howSum/main.h
-    problems/004-howSum/main.cpp
+#    problems/004-howSum/main.h
+#    problems/004-howSum/main.cpp
 
-    problems/005-bestSum/main.h
-    problems/005-bestSum/main.cpp
+#    problems/005-bestSum/main.h
+#    problems/005-bestSum/main.cpp
 
-    tests/001-fib.h
-    tests/002-grid-traveler.h
-    tests/003-can-sum.h
-    tests/004-how-sum.h
-    tests/005-best-sum.h
+#    problems/maximal-square/problem.h
+#    problems/maximal-square/problem.cpp
+#    tests/maximal-square.h
+
+#    problems/jumping-stones/problem.h
+#    problems/jumping-stones/problem.cpp
+#    tests/jumping-stones.h
+
+    tests/fib.h
+#    tests/002-grid-traveler.h
+#    tests/003-can-sum.h
+#    tests/004-how-sum.h
+#    tests/005-best-sum.h
 
     source/main.cpp
 )

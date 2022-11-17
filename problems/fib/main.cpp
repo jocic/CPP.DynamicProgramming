@@ -23,7 +23,7 @@ using namespace std;
  * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-uint64_t fib_dp(uint64_t n) {
+int fib_dp(int n) {
 
     if (n <= 2) {
         return 1;
@@ -45,9 +45,9 @@ uint64_t fib_dp(uint64_t n) {
  * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-uint64_t fib_dp_memo(uint64_t n) {
+int fib_dp_memo(int n) {
 
-    static map<uint64_t, uint64_t> m = {};
+    static map<int, int> m = {};
 
     auto search = m.find(n);
 
@@ -79,11 +79,11 @@ uint64_t fib_dp_memo(uint64_t n) {
  * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-uint64_t fib_dp_tab(uint64_t n) {
+int fib_dp_tab(int n) {
 
-    uint64_t n_max = n + 1;
+    int n_max = n + 1;
 
-    uint64_t* tab = new uint64_t[n_max];
+    int* tab = new int[n_max];
 
     // Init Tab
 
@@ -123,12 +123,12 @@ uint64_t fib_dp_tab(uint64_t n) {
  * @return uint64_t
  *   Value of the N-th element in the Fibonacci sequence.
  */
-uint64_t fib_reg(uint64_t n) {
+int fib_reg(int n) {
     \
-    uint64_t prev = 1;
-    uint64_t curr = 1;
+    int prev = 1;
+    int curr = 1;
 
-    uint64_t temp;
+    int temp;
 
     for (int i = 2; i < n; i++) {
         temp  = curr;
